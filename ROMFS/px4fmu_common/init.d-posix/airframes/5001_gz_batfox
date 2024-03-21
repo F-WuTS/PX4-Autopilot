@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# @name BatFox
+#
+# @type Quadrotor
+#
+
+. ${R}etc/init.d/rc.vtol_defaults
+
+PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=default}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=batfox}
+
+param set-default SIM_GZ_EN 1
+param set-default MAV_TYPE 2
+
+# TODO: Enable motor failure detection when the
+# VTOL no longer reports 0A for all ESCs in SITL
+param set-default FD_ACT_EN 0
+param set-default FD_ACT_MOT_TOUT 500
+
+param set-default SENS_EN_GPSSIM 1
+param set-default SENS_EN_BAROSIM 0
+param set-default SENS_EN_MAGSIM 1
+
+param set-default SIM_GZ_EC_FUNC1 101
+param set-default SIM_GZ_EC_FUNC2 102
+param set-default SIM_GZ_EC_FUNC3 103
+param set-default SIM_GZ_EC_FUNC4 104
+param set-default SIM_GZ_EC_FUNC5 105
+param set-default SIM_GZ_EC_FUNC6 106
+
+param set-default SIM_GZ_EC_MIN1 150
+param set-default SIM_GZ_EC_MIN2 150
+param set-default SIM_GZ_EC_MIN3 150
+param set-default SIM_GZ_EC_MIN4 150
+
+param set-default SIM_GZ_EC_MAX1 1000
+param set-default SIM_GZ_EC_MAX2 1000
+param set-default SIM_GZ_EC_MAX3 1000
+param set-default SIM_GZ_EC_MAX4 1000
+
+
+param set-default MPC_THR_HOVER 0.60
+
+param set-default ASPD_DO_CHECKS 0
+param set-default CA_AIRFRAME 2
+param set-default CA_ROTOR0_PX 0.2500
+param set-default CA_ROTOR0_PY 0.3600
+param set-default CA_ROTOR1_PX -0.2500
+param set-default CA_ROTOR1_PY -0.3600
+param set-default CA_ROTOR2_PX 0.2500
+param set-default CA_ROTOR2_PY -0.3600
+param set-default CA_ROTOR3_PX -0.2500
+param set-default CA_ROTOR3_PY 0.3600
+param set-default CA_ROTOR4_AX 1.0000
+param set-default CA_ROTOR4_AZ 0.0000
+param set-default CA_ROTOR4_PX -0.5600
+param set-default CA_ROTOR5_AZ 0.0000
+param set-default CA_ROTOR5_PX -0.5600
+param set-default CA_ROTOR_COUNT 6
+param set-default FD_ESCS_EN 0
+param set-default SYS_HAS_NUM_ASPD 0
+param set-default VT_FWD_THRUST_EN 3
+param set-default VT_FWD_THRUST_SC 1.3000
+param set-default VT_LND_PITCH_MIN -20.0000
+param set-default VT_PITCH_MIN 0.0000
+param set-default VT_TYPE 2
+param set-default WV_EN 0
+
+param set-default CA_ROTOR2_KM -0.0500
+param set-default CA_ROTOR3_KM -0.0500
+param set-default CA_ROTOR4_KM -0.0500
+param set-default CA_ROTOR5_AX 1.0000
+
+param set-default MIS_TAKEOFF_ALT 1.0
